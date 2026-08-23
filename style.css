@@ -1,0 +1,92 @@
+/* ---------- Element selectors ---------- */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6f8;
+  color: #2d2d2d;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  margin: 0 0 5px 0;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+input {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* ---------- ID selectors ---------- */
+
+#main-header {
+  background-color: #4a6fa5;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+#add-expense {
+  background-color: #e8f0fe;
+}
+
+#your-expenses {
+  background-color: #fdf3e7;
+}
+
+/* ---------- Class selectors ---------- */
+
+.card {
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.subheading {
+  font-size: 16px;
+  font-style: italic;
+  margin: 0;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.add-btn {
+  background-color: #4a6fa5;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #3a5a8c;
+}
+
+.placeholder-text {
+  color: #888;
+  font-style: italic;
+}
