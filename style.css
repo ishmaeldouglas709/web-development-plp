@@ -1,63 +1,104 @@
+/* =========================================================
+   Google Fonts
+   Headings: Poppins (bold, modern, good hierarchy)
+   Body:     Inter   (clean, highly readable at small sizes)
+========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+/* =========================================================
+   Color Palette (CSS Custom Properties)
+   Navy/teal fintech palette: professional and cohesive
+========================================================= */
+:root {
+  --color-primary: #1f3a5f;    /* deep navy - headings, header bg */
+  --color-secondary: #3f72af;  /* mid blue - buttons, table header */
+  --color-accent: #dbe2ef;     /* pale blue - alt rows, borders */
+  --color-bg: #f9fafc;         /* page background */
+  --color-card: #ffffff;       /* card background */
+  --color-text: #112d4e;       /* main text */
+  --color-text-muted: #5a6b82; /* secondary text */
+  --color-border: #d7dee8;     /* borders */
+
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
 /* ---------- Element selectors ---------- */
 
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f4f6f8;
-  color: #2d2d2d;
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
   margin: 0;
-  padding: 20px;
+  padding: 30px 20px;
+  line-height: 1.5;
+}
+
+h1, h2 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
 }
 
 h1 {
   margin: 0 0 5px 0;
+  font-weight: 700;
 }
 
 h2 {
   margin-top: 0;
+  font-weight: 600;
+  font-size: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--color-accent);
+  margin-bottom: 18px;
 }
 
-input {
-  display: block;
-  width: 100%;
-  max-width: 300px;
-  padding: 8px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 14px;
-  box-sizing: border-box;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  font-size: 14px;
-}
-
+input,
 select {
   display: block;
   width: 100%;
   max-width: 300px;
-  padding: 8px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-family: var(--font-body);
   font-size: 14px;
-  box-sizing: border-box;
+  color: var(--color-text);
+  background-color: var(--color-card);
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
 }
 
 /* ---------- ID selectors ---------- */
 
 #main-header {
-  background-color: #4a6fa5;
+  background-color: var(--color-primary);
   color: white;
-  padding: 20px;
-  border-radius: 8px;
-  margin-bottom: 20px;
+  padding: 25px 30px;
+  border-radius: 10px;
+  margin-bottom: 25px;
   display: flex;
   align-items: center;
   gap: 15px;
+  box-shadow: 0 2px 6px rgba(31, 58, 95, 0.25);
+}
+
+#main-header h1 {
+  color: white;
 }
 
 #main-header .logo {
@@ -65,48 +106,58 @@ select {
 }
 
 #add-expense {
-  background-color: #e8f0fe;
+  background-color: var(--color-card);
 }
 
 #your-expenses {
-  background-color: #fdf3e7;
+  background-color: var(--color-card);
+}
+
+#budget-tips {
+  background-color: var(--color-card);
 }
 
 /* ---------- Class selectors ---------- */
 
 .card {
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  padding: 25px 30px;
+  margin-bottom: 25px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(17, 45, 78, 0.08);
 }
 
 .subheading {
-  font-size: 16px;
+  font-size: 15px;
   font-style: italic;
   margin: 0;
+  color: #e3ebf5;
 }
 
 .form-group {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .add-btn {
-  background-color: #4a6fa5;
+  background-color: var(--color-secondary);
   color: white;
   border: none;
-  padding: 10px 16px;
-  border-radius: 4px;
+  padding: 12px 22px;
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-weight: 600;
   font-size: 14px;
   cursor: pointer;
+  margin-top: 6px;
+  transition: background-color 0.15s ease;
 }
 
 .add-btn:hover {
-  background-color: #3a5a8c;
+  background-color: var(--color-primary);
 }
 
 .placeholder-text {
-  color: #888;
+  color: var(--color-text-muted);
   font-style: italic;
 }
 
@@ -116,53 +167,69 @@ select {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
+  font-family: var(--font-body);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .expenses-table th,
 .expenses-table td {
-  border: 1px solid #ccc;
-  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  padding: 12px 14px;
   text-align: left;
+  font-size: 14px;
 }
 
 .expenses-table thead th {
-  background-color: #4a6fa5;
+  background-color: var(--color-secondary);
   color: white;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
 }
 
 .expenses-table tbody tr:nth-child(even) {
-  background-color: #f0f4fa;
+  background-color: var(--color-accent);
 }
 
 .expenses-table tbody tr:hover {
-  background-color: #dce6f5;
+  background-color: #c3d3e8;
 }
 
 /* ---------- Interactive elements ---------- */
 
 .how-to {
-  margin-top: 15px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  padding: 10px 15px;
+  margin-top: 18px;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 12px 16px;
 }
 
 .how-to summary {
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 600;
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+}
+
+.how-to p {
+  color: var(--color-text-muted);
+  font-size: 14px;
 }
 
 /* ---------- Advanced CSS selectors ---------- */
 
 /* Descendant selector: any td inside the expenses section */
 .expenses-section td {
-  font-size: 14px;
+  color: var(--color-text);
 }
 
 /* Direct child selector: only inputs that are direct children of a form-group inside the add-expense form */
 .add-expense-section .form-group > input {
-  border-color: #4a6fa5;
+  border-color: var(--color-secondary);
 }
 
 /* Position-based pseudo-classes */
@@ -172,13 +239,21 @@ select {
 
 /* Negation pseudo-class: style inputs that are not the amount field */
 .add-expense-section input:not([type="number"]) {
-  background-color: #fdfdfd;
+  background-color: #fdfdfe;
 }
 
 /* Focus state for inputs and selects */
 .add-expense-section input:focus,
 .add-expense-section select:focus {
   outline: none;
-  border-color: #3a5a8c;
-  box-shadow: 0 0 0 2px rgba(74, 111, 165, 0.3);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(31, 58, 95, 0.15);
+}
+
+/* ---------- Multimedia section ---------- */
+
+#budget-tips iframe {
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  max-width: 100%;
 }
