@@ -35,6 +35,18 @@ label {
   font-size: 14px;
 }
 
+select {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
 /* ---------- ID selectors ---------- */
 
 #main-header {
@@ -43,6 +55,13 @@ label {
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#main-header .logo {
+  filter: brightness(0) invert(1);
 }
 
 #add-expense {
@@ -89,4 +108,77 @@ label {
 .placeholder-text {
   color: #888;
   font-style: italic;
+}
+
+/* ---------- Expense table styling ---------- */
+
+.expenses-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.expenses-table th,
+.expenses-table td {
+  border: 1px solid #ccc;
+  padding: 10px 12px;
+  text-align: left;
+}
+
+.expenses-table thead th {
+  background-color: #4a6fa5;
+  color: white;
+}
+
+.expenses-table tbody tr:nth-child(even) {
+  background-color: #f0f4fa;
+}
+
+.expenses-table tbody tr:hover {
+  background-color: #dce6f5;
+}
+
+/* ---------- Interactive elements ---------- */
+
+.how-to {
+  margin-top: 15px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px 15px;
+}
+
+.how-to summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* ---------- Advanced CSS selectors ---------- */
+
+/* Descendant selector: any td inside the expenses section */
+.expenses-section td {
+  font-size: 14px;
+}
+
+/* Direct child selector: only inputs that are direct children of a form-group inside the add-expense form */
+.add-expense-section .form-group > input {
+  border-color: #4a6fa5;
+}
+
+/* Position-based pseudo-classes */
+.expenses-table tr:first-child th {
+  letter-spacing: 0.5px;
+}
+
+/* Negation pseudo-class: style inputs that are not the amount field */
+.add-expense-section input:not([type="number"]) {
+  background-color: #fdfdfd;
+}
+
+/* Focus state for inputs and selects */
+.add-expense-section input:focus,
+.add-expense-section select:focus {
+  outline: none;
+  border-color: #3a5a8c;
+  box-shadow: 0 0 0 2px rgba(74, 111, 165, 0.3);
 }
